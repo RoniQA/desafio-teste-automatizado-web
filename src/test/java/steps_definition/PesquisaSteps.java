@@ -1,17 +1,20 @@
-package stepDefinitions;
+package steps_definition;
 
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class PesquisaSteps {
     @Dado("^que estou na pagina de pesquisa$")
     public void que_estou_na_pagina_de_pesquisa() throws Throwable {
-
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.amazon.com.br/");
     }
 
-    @Quando("^pesquisar por um produto produto <VALIDO>$")
-    public void pesquisar_por_um_produto_produto_VALIDO() throws Throwable {
+    @Quando("^pesquisar por um produto produto \"([^\"]*)\"$")
+    public void pesquisar_por_um_produto_produto(String arg1) throws Throwable {
 
     }
 
