@@ -1,13 +1,20 @@
 package steps_definition;
 
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
+import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.File;
+import java.io.IOException;
 
 public class PesquisaSteps {
 
@@ -35,7 +42,17 @@ public class PesquisaSteps {
         String texto = driver.findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[1]/div/span[3]/div[2]/div[1]/div/div/div/h1/span")).getText();
         Assert.assertEquals("Use menos palavras-chave ou tente usar as a seguir", texto);
     }
-    @After
+
+    @After (order = 1)
+    public void screenshot(Scenario cenario) {
+        File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(file, new File("target/screenshots/"+cenario.getId()+".jpg"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    @After (order = 0)
     public void fecharBrowser() {
         driver.quit();
     }

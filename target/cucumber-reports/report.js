@@ -43,7 +43,7 @@ formatter.match({
   "location": "PesquisaSteps.que_estou_na_pagina_de_pesquisa()"
 });
 formatter.result({
-  "duration": 2909890500,
+  "duration": 3951870300,
   "status": "passed"
 });
 formatter.match({
@@ -56,18 +56,22 @@ formatter.match({
   "location": "PesquisaSteps.pesquisar_por_um_produto(String)"
 });
 formatter.result({
-  "duration": 1804171600,
+  "duration": 1825423000,
   "status": "passed"
 });
 formatter.match({
   "location": "PesquisaSteps.retorna_uma_quantidade_de_produtos()"
 });
 formatter.result({
-  "duration": 25850500,
+  "duration": 36196800,
   "status": "passed"
 });
 formatter.after({
-  "duration": 136686700,
+  "duration": 217944200,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 171639300,
   "status": "passed"
 });
 formatter.scenario({
@@ -97,7 +101,7 @@ formatter.match({
   "location": "PesquisaSteps.que_estou_na_pagina_de_pesquisa()"
 });
 formatter.result({
-  "duration": 2243238600,
+  "duration": 2267470600,
   "status": "passed"
 });
 formatter.match({
@@ -110,18 +114,22 @@ formatter.match({
   "location": "PesquisaSteps.pesquisar_por_um_produto(String)"
 });
 formatter.result({
-  "duration": 1448497800,
+  "duration": 1399182900,
   "status": "passed"
 });
 formatter.match({
   "location": "PesquisaSteps.retorna_uma_mensagem_de_erro()"
 });
 formatter.result({
-  "duration": 24239800,
+  "duration": 34162400,
   "status": "passed"
 });
 formatter.after({
-  "duration": 79166600,
+  "duration": 139574100,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 116147000,
   "status": "passed"
 });
 });
